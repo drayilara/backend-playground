@@ -1,5 +1,14 @@
-const EventEmitter = require('events');
+const express = require('express');
 
-const evt = new EventEmitter();
+const router = express.Router();
 
-module.exports.evt = evt;
+router
+    .route('')
+    .get((req,res) => {
+    res.send('Hit the get route of products');
+})
+    .post((req,res) => {
+    res.send('Hit the post route of products');
+});
+
+module.exports = router
